@@ -1,0 +1,602 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="dbSigaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'dbSiga.dbo.vw_plantilla' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="vw_plantilla">
+          <Key>
+            <PropertyRef Name="PersonalID" />
+            <PropertyRef Name="idtccentro" />
+            <PropertyRef Name="centro" />
+            <PropertyRef Name="idtccentrotrabajo" />
+            <PropertyRef Name="centrotrabajo" />
+            <PropertyRef Name="rfc" />
+            <PropertyRef Name="curp" />
+            <PropertyRef Name="telefono" />
+            <PropertyRef Name="paterno" />
+            <PropertyRef Name="materno" />
+            <PropertyRef Name="nombre" />
+            <PropertyRef Name="idtcestatuslaboral" />
+            <PropertyRef Name="fechanacimiento" />
+            <PropertyRef Name="EdadCalculada" />
+            <PropertyRef Name="AdscripcionID" />
+            <PropertyRef Name="nopersonal" />
+            <PropertyRef Name="ClaveIFE" />
+            <PropertyRef Name="noimss" />
+            <PropertyRef Name="genero" />
+            <PropertyRef Name="estadocivil" />
+            <PropertyRef Name="lugarnacimiento" />
+            <PropertyRef Name="idtcgradoestudio" />
+            <PropertyRef Name="celular" />
+            <PropertyRef Name="email" />
+            <PropertyRef Name="telefonorecados" />
+            <PropertyRef Name="idtcentidadfederativa" />
+            <PropertyRef Name="abreviacion" />
+            <PropertyRef Name="localidad" />
+            <PropertyRef Name="cartillasmn" />
+            <PropertyRef Name="fechaalta" />
+            <PropertyRef Name="cuip" />
+            <PropertyRef Name="numeroprogramatico" />
+            <PropertyRef Name="noplaza" />
+            <PropertyRef Name="tipocontrato" />
+            <PropertyRef Name="idtccategoria" />
+            <PropertyRef Name="tipoelemento" />
+            <PropertyRef Name="categoria" />
+            <PropertyRef Name="idtcmunicipio" />
+            <PropertyRef Name="MunicipiosNombre" />
+            <PropertyRef Name="gradodescripcion" />
+            <PropertyRef Name="entidadfederativa" />
+            <PropertyRef Name="idtcsituacionlab" />
+            <PropertyRef Name="nombresituacionlaboral" />
+            <PropertyRef Name="DiasPendientesV" />
+            <PropertyRef Name="idtcplazatipo" />
+            <PropertyRef Name="tipoplaza" />
+            <PropertyRef Name="idtctiporh" />
+            <PropertyRef Name="estatus" />
+          </Key>
+          <Property Name="PersonalID" Type="int" Nullable="false" />
+          <Property Name="idtccentro" Type="int" Nullable="false" />
+          <Property Name="centro" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="idtccentrotrabajo" Type="int" Nullable="false" />
+          <Property Name="centrotrabajo" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="rfc" Type="char" MaxLength="40" Nullable="false" />
+          <Property Name="curp" Type="char" MaxLength="40" Nullable="false" />
+          <Property Name="telefono" Type="char" MaxLength="60" Nullable="false" />
+          <Property Name="paterno" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="materno" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="Busqueda" Type="varchar" MaxLength="587" />
+          <Property Name="nombrecompleto" Type="varchar" MaxLength="243" />
+          <Property Name="idtcestatuslaboral" Type="int" Nullable="false" />
+          <Property Name="fechanacimiento" Type="date" Nullable="false" />
+          <Property Name="EdadCalculada" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="AdscripcionID" Type="int" Nullable="false" />
+          <Property Name="nopersonal" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="ClaveIFE" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="noimss" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="genero" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="estadocivil" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="lugarnacimiento" Type="varchar" MaxLength="160" Nullable="false" />
+          <Property Name="idtcgradoestudio" Type="int" Nullable="false" />
+          <Property Name="celular" Type="char" MaxLength="60" Nullable="false" />
+          <Property Name="email" Type="char" MaxLength="255" Nullable="false" />
+          <Property Name="telefonorecados" Type="char" MaxLength="60" Nullable="false" />
+          <Property Name="idtcentidadfederativa" Type="int" Nullable="false" />
+          <Property Name="abreviacion" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="localidad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cartillasmn" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="fechaalta" Type="date" Nullable="false" />
+          <Property Name="antiguedad" Type="int" />
+          <Property Name="cuip" Type="char" MaxLength="150" Nullable="false" />
+          <Property Name="numeroprogramatico" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="GeneracionID" Type="int" />
+          <Property Name="FuncionID" Type="int" />
+          <Property Name="noplaza" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="tipocontrato" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="idtccategoria" Type="int" Nullable="false" />
+          <Property Name="exmilitar" Type="char" MaxLength="1" />
+          <Property Name="descripcionexmilitar" Type="varchar(max)" />
+          <Property Name="tipoelemento" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="categoria" Type="varchar" MaxLength="160" Nullable="false" />
+          <Property Name="idtcmunicipio" Type="int" Nullable="false" />
+          <Property Name="MunicipiosNombre" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="gradodescripcion" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="entidadfederativa" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="idtcsituacionlab" Type="int" Nullable="false" />
+          <Property Name="nombresituacionlaboral" Type="nchar" MaxLength="70" Nullable="false" />
+          <Property Name="DiasPendientesV" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="funcion" Type="varchar" MaxLength="200" />
+          <Property Name="ctmatriz" Type="varchar" MaxLength="200" />
+          <Property Name="cttrabajo" Type="varchar" MaxLength="200" />
+          <Property Name="ct_ubicacion" Type="varchar" MaxLength="200" />
+          <Property Name="ub_fisicaactual" Type="varchar" MaxLength="200" />
+          <Property Name="sub_ubicacion" Type="varchar(max)" />
+          <Property Name="base_generalpuesto" Type="varchar" MaxLength="200" />
+          <Property Name="idtcplazatipo" Type="int" Nullable="false" />
+          <Property Name="tipoplaza" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="idtcctubicacion" Type="int" />
+          <Property Name="ctubfisica" Type="varchar" MaxLength="200" />
+          <Property Name="idtcubfisica" Type="int" />
+          <Property Name="ubfisica" Type="varchar" MaxLength="200" />
+          <Property Name="idsububfisico" Type="int" />
+          <Property Name="sububfisica" Type="varchar" MaxLength="200" />
+          <Property Name="idtctiporh" Type="int" Nullable="false" />
+          <Property Name="tiporh" Type="nchar" MaxLength="4" />
+          <Property Name="estatus" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatusmotivo" Type="varchar" MaxLength="300" />
+          <Property Name="mando" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <Function Name="sp_busca_personal_plantilla_siga" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="busqueda" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="dbSigaModelStoreContainer">
+          <EntitySet Name="vw_plantilla" EntityType="Self.vw_plantilla" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vw_plantilla].[PersonalID] AS [PersonalID], 
+[vw_plantilla].[idtccentro] AS [idtccentro], 
+[vw_plantilla].[centro] AS [centro], 
+[vw_plantilla].[idtccentrotrabajo] AS [idtccentrotrabajo], 
+[vw_plantilla].[centrotrabajo] AS [centrotrabajo], 
+[vw_plantilla].[rfc] AS [rfc], 
+[vw_plantilla].[curp] AS [curp], 
+[vw_plantilla].[telefono] AS [telefono], 
+[vw_plantilla].[paterno] AS [paterno], 
+[vw_plantilla].[materno] AS [materno], 
+[vw_plantilla].[nombre] AS [nombre], 
+[vw_plantilla].[Busqueda] AS [Busqueda], 
+[vw_plantilla].[nombrecompleto] AS [nombrecompleto], 
+[vw_plantilla].[idtcestatuslaboral] AS [idtcestatuslaboral], 
+[vw_plantilla].[fechanacimiento] AS [fechanacimiento], 
+[vw_plantilla].[EdadCalculada] AS [EdadCalculada], 
+[vw_plantilla].[AdscripcionID] AS [AdscripcionID], 
+[vw_plantilla].[nopersonal] AS [nopersonal], 
+[vw_plantilla].[ClaveIFE] AS [ClaveIFE], 
+[vw_plantilla].[noimss] AS [noimss], 
+[vw_plantilla].[genero] AS [genero], 
+[vw_plantilla].[estadocivil] AS [estadocivil], 
+[vw_plantilla].[lugarnacimiento] AS [lugarnacimiento], 
+[vw_plantilla].[idtcgradoestudio] AS [idtcgradoestudio], 
+[vw_plantilla].[celular] AS [celular], 
+[vw_plantilla].[email] AS [email], 
+[vw_plantilla].[telefonorecados] AS [telefonorecados], 
+[vw_plantilla].[idtcentidadfederativa] AS [idtcentidadfederativa], 
+[vw_plantilla].[abreviacion] AS [abreviacion], 
+[vw_plantilla].[localidad] AS [localidad], 
+[vw_plantilla].[cartillasmn] AS [cartillasmn], 
+[vw_plantilla].[fechaalta] AS [fechaalta], 
+[vw_plantilla].[antiguedad] AS [antiguedad], 
+[vw_plantilla].[cuip] AS [cuip], 
+[vw_plantilla].[numeroprogramatico] AS [numeroprogramatico], 
+[vw_plantilla].[GeneracionID] AS [GeneracionID], 
+[vw_plantilla].[FuncionID] AS [FuncionID], 
+[vw_plantilla].[noplaza] AS [noplaza], 
+[vw_plantilla].[tipocontrato] AS [tipocontrato], 
+[vw_plantilla].[idtccategoria] AS [idtccategoria], 
+[vw_plantilla].[exmilitar] AS [exmilitar], 
+[vw_plantilla].[descripcionexmilitar] AS [descripcionexmilitar], 
+[vw_plantilla].[tipoelemento] AS [tipoelemento], 
+[vw_plantilla].[categoria] AS [categoria], 
+[vw_plantilla].[idtcmunicipio] AS [idtcmunicipio], 
+[vw_plantilla].[MunicipiosNombre] AS [MunicipiosNombre], 
+[vw_plantilla].[gradodescripcion] AS [gradodescripcion], 
+[vw_plantilla].[entidadfederativa] AS [entidadfederativa], 
+[vw_plantilla].[idtcsituacionlab] AS [idtcsituacionlab], 
+[vw_plantilla].[nombresituacionlaboral] AS [nombresituacionlaboral], 
+[vw_plantilla].[DiasPendientesV] AS [DiasPendientesV], 
+[vw_plantilla].[funcion] AS [funcion], 
+[vw_plantilla].[ctmatriz] AS [ctmatriz], 
+[vw_plantilla].[cttrabajo] AS [cttrabajo], 
+[vw_plantilla].[ct_ubicacion] AS [ct_ubicacion], 
+[vw_plantilla].[ub_fisicaactual] AS [ub_fisicaactual], 
+[vw_plantilla].[sub_ubicacion] AS [sub_ubicacion], 
+[vw_plantilla].[base_generalpuesto] AS [base_generalpuesto], 
+[vw_plantilla].[idtcplazatipo] AS [idtcplazatipo], 
+[vw_plantilla].[tipoplaza] AS [tipoplaza], 
+[vw_plantilla].[idtcctubicacion] AS [idtcctubicacion], 
+[vw_plantilla].[ctubfisica] AS [ctubfisica], 
+[vw_plantilla].[idtcubfisica] AS [idtcubfisica], 
+[vw_plantilla].[ubfisica] AS [ubfisica], 
+[vw_plantilla].[idsububfisico] AS [idsububfisico], 
+[vw_plantilla].[sububfisica] AS [sububfisica], 
+[vw_plantilla].[idtctiporh] AS [idtctiporh], 
+[vw_plantilla].[tiporh] AS [tiporh], 
+[vw_plantilla].[estatus] AS [estatus], 
+[vw_plantilla].[estatusmotivo] AS [estatusmotivo], 
+[vw_plantilla].[mando] AS [mando]
+FROM [dbo].[vw_plantilla] AS [vw_plantilla]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbSigaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="vw_plantilla">
+          <Key>
+            <PropertyRef Name="PersonalID" />
+            <PropertyRef Name="idtccentro" />
+            <PropertyRef Name="centro" />
+            <PropertyRef Name="idtccentrotrabajo" />
+            <PropertyRef Name="centrotrabajo" />
+            <PropertyRef Name="rfc" />
+            <PropertyRef Name="curp" />
+            <PropertyRef Name="telefono" />
+            <PropertyRef Name="paterno" />
+            <PropertyRef Name="materno" />
+            <PropertyRef Name="nombre" />
+            <PropertyRef Name="idtcestatuslaboral" />
+            <PropertyRef Name="fechanacimiento" />
+            <PropertyRef Name="EdadCalculada" />
+            <PropertyRef Name="AdscripcionID" />
+            <PropertyRef Name="nopersonal" />
+            <PropertyRef Name="ClaveIFE" />
+            <PropertyRef Name="noimss" />
+            <PropertyRef Name="genero" />
+            <PropertyRef Name="estadocivil" />
+            <PropertyRef Name="lugarnacimiento" />
+            <PropertyRef Name="idtcgradoestudio" />
+            <PropertyRef Name="celular" />
+            <PropertyRef Name="email" />
+            <PropertyRef Name="telefonorecados" />
+            <PropertyRef Name="idtcentidadfederativa" />
+            <PropertyRef Name="abreviacion" />
+            <PropertyRef Name="localidad" />
+            <PropertyRef Name="cartillasmn" />
+            <PropertyRef Name="fechaalta" />
+            <PropertyRef Name="cuip" />
+            <PropertyRef Name="numeroprogramatico" />
+            <PropertyRef Name="noplaza" />
+            <PropertyRef Name="tipocontrato" />
+            <PropertyRef Name="idtccategoria" />
+            <PropertyRef Name="tipoelemento" />
+            <PropertyRef Name="categoria" />
+            <PropertyRef Name="idtcmunicipio" />
+            <PropertyRef Name="MunicipiosNombre" />
+            <PropertyRef Name="gradodescripcion" />
+            <PropertyRef Name="entidadfederativa" />
+            <PropertyRef Name="idtcsituacionlab" />
+            <PropertyRef Name="nombresituacionlaboral" />
+            <PropertyRef Name="DiasPendientesV" />
+            <PropertyRef Name="idtcplazatipo" />
+            <PropertyRef Name="tipoplaza" />
+            <PropertyRef Name="idtctiporh" />
+            <PropertyRef Name="estatus" />
+          </Key>
+          <Property Name="PersonalID" Type="Int32" Nullable="false" />
+          <Property Name="idtccentro" Type="Int32" Nullable="false" />
+          <Property Name="centro" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idtccentrotrabajo" Type="Int32" Nullable="false" />
+          <Property Name="centrotrabajo" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rfc" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="curp" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="telefono" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="paterno" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="materno" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Busqueda" Type="String" MaxLength="587" FixedLength="false" Unicode="false" />
+          <Property Name="nombrecompleto" Type="String" MaxLength="243" FixedLength="false" Unicode="false" />
+          <Property Name="idtcestatuslaboral" Type="Int32" Nullable="false" />
+          <Property Name="fechanacimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EdadCalculada" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="AdscripcionID" Type="Int32" Nullable="false" />
+          <Property Name="nopersonal" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ClaveIFE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="noimss" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="genero" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="estadocivil" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="lugarnacimiento" Type="String" MaxLength="160" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idtcgradoestudio" Type="Int32" Nullable="false" />
+          <Property Name="celular" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="telefonorecados" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="idtcentidadfederativa" Type="Int32" Nullable="false" />
+          <Property Name="abreviacion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="localidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cartillasmn" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaalta" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="antiguedad" Type="Int32" />
+          <Property Name="cuip" Type="String" MaxLength="150" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="numeroprogramatico" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GeneracionID" Type="Int32" />
+          <Property Name="FuncionID" Type="Int32" />
+          <Property Name="noplaza" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="tipocontrato" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="idtccategoria" Type="Int32" Nullable="false" />
+          <Property Name="exmilitar" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="descripcionexmilitar" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="tipoelemento" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="categoria" Type="String" MaxLength="160" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idtcmunicipio" Type="Int32" Nullable="false" />
+          <Property Name="MunicipiosNombre" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="gradodescripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="entidadfederativa" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idtcsituacionlab" Type="Int32" Nullable="false" />
+          <Property Name="nombresituacionlaboral" Type="String" MaxLength="70" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DiasPendientesV" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="funcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ctmatriz" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="cttrabajo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ct_ubicacion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ub_fisicaactual" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="sub_ubicacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="base_generalpuesto" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="idtcplazatipo" Type="Int32" Nullable="false" />
+          <Property Name="tipoplaza" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="idtcctubicacion" Type="Int32" />
+          <Property Name="ctubfisica" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="idtcubfisica" Type="Int32" />
+          <Property Name="ubfisica" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="idsububfisico" Type="Int32" />
+          <Property Name="sububfisica" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="idtctiporh" Type="Int32" Nullable="false" />
+          <Property Name="tiporh" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="estatus" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="estatusmotivo" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="mando" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="dbSigaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="vw_plantilla" EntityType="Self.vw_plantilla" />
+          <FunctionImport Name="sp_busca_personal_plantilla_siga" ReturnType="Collection(dbSigaModel.sp_busca_personal_plantilla_siga_Result)">
+            <Parameter Name="busqueda" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="sp_busca_personal_plantilla_siga_Result">
+          <Property Type="Int32" Name="PersonalID" Nullable="false" />
+          <Property Type="Int32" Name="idtccentro" Nullable="false" />
+          <Property Type="String" Name="centro" Nullable="false" MaxLength="150" />
+          <Property Type="Int32" Name="idtccentrotrabajo" Nullable="false" />
+          <Property Type="String" Name="centrotrabajo" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="rfc" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="curp" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="telefono" Nullable="false" MaxLength="60" />
+          <Property Type="String" Name="paterno" Nullable="false" MaxLength="80" />
+          <Property Type="String" Name="materno" Nullable="false" MaxLength="80" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="80" />
+          <Property Type="String" Name="Busqueda" Nullable="true" MaxLength="587" />
+          <Property Type="String" Name="nombrecompleto" Nullable="true" MaxLength="243" />
+          <Property Type="Int32" Name="idtcestatuslaboral" Nullable="false" />
+          <Property Type="DateTime" Name="fechanacimiento" Nullable="false" />
+          <Property Type="Decimal" Name="EdadCalculada" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="AdscripcionID" Nullable="false" />
+          <Property Type="String" Name="nopersonal" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ClaveIFE" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="noimss" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="genero" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="estadocivil" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="lugarnacimiento" Nullable="false" MaxLength="160" />
+          <Property Type="Int32" Name="idtcgradoestudio" Nullable="false" />
+          <Property Type="String" Name="celular" Nullable="false" MaxLength="60" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="telefonorecados" Nullable="false" MaxLength="60" />
+          <Property Type="Int32" Name="idtcentidadfederativa" Nullable="false" />
+          <Property Type="String" Name="abreviacion" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="localidad" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="cartillasmn" Nullable="false" MaxLength="40" />
+          <Property Type="DateTime" Name="fechaalta" Nullable="false" />
+          <Property Type="Int32" Name="antiguedad" Nullable="true" />
+          <Property Type="String" Name="cuip" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="numeroprogramatico" Nullable="false" MaxLength="150" />
+          <Property Type="Int32" Name="GeneracionID" Nullable="true" />
+          <Property Type="Int32" Name="FuncionID" Nullable="true" />
+          <Property Type="String" Name="noplaza" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="tipocontrato" Nullable="false" MaxLength="1" />
+          <Property Type="Int32" Name="idtccategoria" Nullable="false" />
+          <Property Type="String" Name="exmilitar" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="descripcionexmilitar" Nullable="true" />
+          <Property Type="String" Name="tipoelemento" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="categoria" Nullable="false" MaxLength="160" />
+          <Property Type="Int32" Name="idtcmunicipio" Nullable="false" />
+          <Property Type="String" Name="MunicipiosNombre" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="gradodescripcion" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="entidadfederativa" Nullable="false" MaxLength="40" />
+          <Property Type="Int32" Name="idtcsituacionlab" Nullable="false" />
+          <Property Type="String" Name="nombresituacionlaboral" Nullable="false" MaxLength="70" />
+          <Property Type="String" Name="DiasPendientesV" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="funcion" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ctmatriz" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="cttrabajo" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ct_ubicacion" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ub_fisicaactual" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="sub_ubicacion" Nullable="true" />
+          <Property Type="String" Name="base_generalpuesto" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="idtcplazatipo" Nullable="false" />
+          <Property Type="String" Name="tipoplaza" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="idtcctubicacion" Nullable="true" />
+          <Property Type="String" Name="ctubfisica" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="idtcubfisica" Nullable="true" />
+          <Property Type="String" Name="ubfisica" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="idsububfisico" Nullable="true" />
+          <Property Type="String" Name="sububfisica" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="idtctiporh" Nullable="false" />
+          <Property Type="String" Name="tiporh" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="estatus" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="estatusmotivo" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="mando" Nullable="true" MaxLength="200" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbSigaModelStoreContainer" CdmEntityContainer="dbSigaEntities">
+          <EntitySetMapping Name="vw_plantilla">
+            <EntityTypeMapping TypeName="dbSigaModel.vw_plantilla">
+              <MappingFragment StoreEntitySet="vw_plantilla">
+                <ScalarProperty Name="PersonalID" ColumnName="PersonalID" />
+                <ScalarProperty Name="idtccentro" ColumnName="idtccentro" />
+                <ScalarProperty Name="centro" ColumnName="centro" />
+                <ScalarProperty Name="idtccentrotrabajo" ColumnName="idtccentrotrabajo" />
+                <ScalarProperty Name="centrotrabajo" ColumnName="centrotrabajo" />
+                <ScalarProperty Name="rfc" ColumnName="rfc" />
+                <ScalarProperty Name="curp" ColumnName="curp" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="paterno" ColumnName="paterno" />
+                <ScalarProperty Name="materno" ColumnName="materno" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="Busqueda" ColumnName="Busqueda" />
+                <ScalarProperty Name="nombrecompleto" ColumnName="nombrecompleto" />
+                <ScalarProperty Name="idtcestatuslaboral" ColumnName="idtcestatuslaboral" />
+                <ScalarProperty Name="fechanacimiento" ColumnName="fechanacimiento" />
+                <ScalarProperty Name="EdadCalculada" ColumnName="EdadCalculada" />
+                <ScalarProperty Name="AdscripcionID" ColumnName="AdscripcionID" />
+                <ScalarProperty Name="nopersonal" ColumnName="nopersonal" />
+                <ScalarProperty Name="ClaveIFE" ColumnName="ClaveIFE" />
+                <ScalarProperty Name="noimss" ColumnName="noimss" />
+                <ScalarProperty Name="genero" ColumnName="genero" />
+                <ScalarProperty Name="estadocivil" ColumnName="estadocivil" />
+                <ScalarProperty Name="lugarnacimiento" ColumnName="lugarnacimiento" />
+                <ScalarProperty Name="idtcgradoestudio" ColumnName="idtcgradoestudio" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telefonorecados" ColumnName="telefonorecados" />
+                <ScalarProperty Name="idtcentidadfederativa" ColumnName="idtcentidadfederativa" />
+                <ScalarProperty Name="abreviacion" ColumnName="abreviacion" />
+                <ScalarProperty Name="localidad" ColumnName="localidad" />
+                <ScalarProperty Name="cartillasmn" ColumnName="cartillasmn" />
+                <ScalarProperty Name="fechaalta" ColumnName="fechaalta" />
+                <ScalarProperty Name="antiguedad" ColumnName="antiguedad" />
+                <ScalarProperty Name="cuip" ColumnName="cuip" />
+                <ScalarProperty Name="numeroprogramatico" ColumnName="numeroprogramatico" />
+                <ScalarProperty Name="GeneracionID" ColumnName="GeneracionID" />
+                <ScalarProperty Name="FuncionID" ColumnName="FuncionID" />
+                <ScalarProperty Name="noplaza" ColumnName="noplaza" />
+                <ScalarProperty Name="tipocontrato" ColumnName="tipocontrato" />
+                <ScalarProperty Name="idtccategoria" ColumnName="idtccategoria" />
+                <ScalarProperty Name="exmilitar" ColumnName="exmilitar" />
+                <ScalarProperty Name="descripcionexmilitar" ColumnName="descripcionexmilitar" />
+                <ScalarProperty Name="tipoelemento" ColumnName="tipoelemento" />
+                <ScalarProperty Name="categoria" ColumnName="categoria" />
+                <ScalarProperty Name="idtcmunicipio" ColumnName="idtcmunicipio" />
+                <ScalarProperty Name="MunicipiosNombre" ColumnName="MunicipiosNombre" />
+                <ScalarProperty Name="gradodescripcion" ColumnName="gradodescripcion" />
+                <ScalarProperty Name="entidadfederativa" ColumnName="entidadfederativa" />
+                <ScalarProperty Name="idtcsituacionlab" ColumnName="idtcsituacionlab" />
+                <ScalarProperty Name="nombresituacionlaboral" ColumnName="nombresituacionlaboral" />
+                <ScalarProperty Name="DiasPendientesV" ColumnName="DiasPendientesV" />
+                <ScalarProperty Name="funcion" ColumnName="funcion" />
+                <ScalarProperty Name="ctmatriz" ColumnName="ctmatriz" />
+                <ScalarProperty Name="cttrabajo" ColumnName="cttrabajo" />
+                <ScalarProperty Name="ct_ubicacion" ColumnName="ct_ubicacion" />
+                <ScalarProperty Name="ub_fisicaactual" ColumnName="ub_fisicaactual" />
+                <ScalarProperty Name="sub_ubicacion" ColumnName="sub_ubicacion" />
+                <ScalarProperty Name="base_generalpuesto" ColumnName="base_generalpuesto" />
+                <ScalarProperty Name="idtcplazatipo" ColumnName="idtcplazatipo" />
+                <ScalarProperty Name="tipoplaza" ColumnName="tipoplaza" />
+                <ScalarProperty Name="idtcctubicacion" ColumnName="idtcctubicacion" />
+                <ScalarProperty Name="ctubfisica" ColumnName="ctubfisica" />
+                <ScalarProperty Name="idtcubfisica" ColumnName="idtcubfisica" />
+                <ScalarProperty Name="ubfisica" ColumnName="ubfisica" />
+                <ScalarProperty Name="idsububfisico" ColumnName="idsububfisico" />
+                <ScalarProperty Name="sububfisica" ColumnName="sububfisica" />
+                <ScalarProperty Name="idtctiporh" ColumnName="idtctiporh" />
+                <ScalarProperty Name="tiporh" ColumnName="tiporh" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="estatusmotivo" ColumnName="estatusmotivo" />
+                <ScalarProperty Name="mando" ColumnName="mando" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_busca_personal_plantilla_siga" FunctionName="dbSigaModel.Store.sp_busca_personal_plantilla_siga">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbSigaModel.sp_busca_personal_plantilla_siga_Result">
+                <ScalarProperty Name="PersonalID" ColumnName="PersonalID" />
+                <ScalarProperty Name="idtccentro" ColumnName="idtccentro" />
+                <ScalarProperty Name="centro" ColumnName="centro" />
+                <ScalarProperty Name="idtccentrotrabajo" ColumnName="idtccentrotrabajo" />
+                <ScalarProperty Name="centrotrabajo" ColumnName="centrotrabajo" />
+                <ScalarProperty Name="rfc" ColumnName="rfc" />
+                <ScalarProperty Name="curp" ColumnName="curp" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="paterno" ColumnName="paterno" />
+                <ScalarProperty Name="materno" ColumnName="materno" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="Busqueda" ColumnName="Busqueda" />
+                <ScalarProperty Name="nombrecompleto" ColumnName="nombrecompleto" />
+                <ScalarProperty Name="idtcestatuslaboral" ColumnName="idtcestatuslaboral" />
+                <ScalarProperty Name="fechanacimiento" ColumnName="fechanacimiento" />
+                <ScalarProperty Name="EdadCalculada" ColumnName="EdadCalculada" />
+                <ScalarProperty Name="AdscripcionID" ColumnName="AdscripcionID" />
+                <ScalarProperty Name="nopersonal" ColumnName="nopersonal" />
+                <ScalarProperty Name="ClaveIFE" ColumnName="ClaveIFE" />
+                <ScalarProperty Name="noimss" ColumnName="noimss" />
+                <ScalarProperty Name="genero" ColumnName="genero" />
+                <ScalarProperty Name="estadocivil" ColumnName="estadocivil" />
+                <ScalarProperty Name="lugarnacimiento" ColumnName="lugarnacimiento" />
+                <ScalarProperty Name="idtcgradoestudio" ColumnName="idtcgradoestudio" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telefonorecados" ColumnName="telefonorecados" />
+                <ScalarProperty Name="idtcentidadfederativa" ColumnName="idtcentidadfederativa" />
+                <ScalarProperty Name="abreviacion" ColumnName="abreviacion" />
+                <ScalarProperty Name="localidad" ColumnName="localidad" />
+                <ScalarProperty Name="cartillasmn" ColumnName="cartillasmn" />
+                <ScalarProperty Name="fechaalta" ColumnName="fechaalta" />
+                <ScalarProperty Name="antiguedad" ColumnName="antiguedad" />
+                <ScalarProperty Name="cuip" ColumnName="cuip" />
+                <ScalarProperty Name="numeroprogramatico" ColumnName="numeroprogramatico" />
+                <ScalarProperty Name="GeneracionID" ColumnName="GeneracionID" />
+                <ScalarProperty Name="FuncionID" ColumnName="FuncionID" />
+                <ScalarProperty Name="noplaza" ColumnName="noplaza" />
+                <ScalarProperty Name="tipocontrato" ColumnName="tipocontrato" />
+                <ScalarProperty Name="idtccategoria" ColumnName="idtccategoria" />
+                <ScalarProperty Name="exmilitar" ColumnName="exmilitar" />
+                <ScalarProperty Name="descripcionexmilitar" ColumnName="descripcionexmilitar" />
+                <ScalarProperty Name="tipoelemento" ColumnName="tipoelemento" />
+                <ScalarProperty Name="categoria" ColumnName="categoria" />
+                <ScalarProperty Name="idtcmunicipio" ColumnName="idtcmunicipio" />
+                <ScalarProperty Name="MunicipiosNombre" ColumnName="MunicipiosNombre" />
+                <ScalarProperty Name="gradodescripcion" ColumnName="gradodescripcion" />
+                <ScalarProperty Name="entidadfederativa" ColumnName="entidadfederativa" />
+                <ScalarProperty Name="idtcsituacionlab" ColumnName="idtcsituacionlab" />
+                <ScalarProperty Name="nombresituacionlaboral" ColumnName="nombresituacionlaboral" />
+                <ScalarProperty Name="DiasPendientesV" ColumnName="DiasPendientesV" />
+                <ScalarProperty Name="funcion" ColumnName="funcion" />
+                <ScalarProperty Name="ctmatriz" ColumnName="ctmatriz" />
+                <ScalarProperty Name="cttrabajo" ColumnName="cttrabajo" />
+                <ScalarProperty Name="ct_ubicacion" ColumnName="ct_ubicacion" />
+                <ScalarProperty Name="ub_fisicaactual" ColumnName="ub_fisicaactual" />
+                <ScalarProperty Name="sub_ubicacion" ColumnName="sub_ubicacion" />
+                <ScalarProperty Name="base_generalpuesto" ColumnName="base_generalpuesto" />
+                <ScalarProperty Name="idtcplazatipo" ColumnName="idtcplazatipo" />
+                <ScalarProperty Name="tipoplaza" ColumnName="tipoplaza" />
+                <ScalarProperty Name="idtcctubicacion" ColumnName="idtcctubicacion" />
+                <ScalarProperty Name="ctubfisica" ColumnName="ctubfisica" />
+                <ScalarProperty Name="idtcubfisica" ColumnName="idtcubfisica" />
+                <ScalarProperty Name="ubfisica" ColumnName="ubfisica" />
+                <ScalarProperty Name="idsububfisico" ColumnName="idsububfisico" />
+                <ScalarProperty Name="sububfisica" ColumnName="sububfisica" />
+                <ScalarProperty Name="idtctiporh" ColumnName="idtctiporh" />
+                <ScalarProperty Name="tiporh" ColumnName="tiporh" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="estatusmotivo" ColumnName="estatusmotivo" />
+                <ScalarProperty Name="mando" ColumnName="mando" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
