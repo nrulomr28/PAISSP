@@ -26,7 +26,7 @@ namespace AdmonUser.Administracion
             {
                 Session["GuidSistema"] = validarSistema.ApplicationId;
                 Session["Nombresistena"] = validarSistema.ApplicationName;
-                Response.Redirect("~/Administracion/Usuarios.aspx");
+                Response.Redirect("~/Administracion/AdmonUsuariosMembership");
 
             }
 

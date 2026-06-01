@@ -118,9 +118,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Administracion\Sistemas.aspx" />
-    <Content Include="Administracion\Usuarios.aspx" />
-    <Content Include="Administracion\usuarios_genexus.aspx" />
+    <Content Include="Administracion\PortalAdministracion.aspx" />
+    <Content Include="Administracion\AdmonUsuariosMembership.aspx" />
+    <Content Include="Administracion\AdmonUsuariosGenexus.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -227,26 +227,26 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administracion\Sistemas.aspx.cs">
-      <DependentUpon>Sistemas.aspx</DependentUpon>
+    <Compile Include="Administracion\PortalAdministracion.aspx.cs">
+      <DependentUpon>PortalAdministracion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Administracion\Sistemas.aspx.designer.cs">
-      <DependentUpon>Sistemas.aspx</DependentUpon>
+    <Compile Include="Administracion\PortalAdministracion.aspx.designer.cs">
+      <DependentUpon>PortalAdministracion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Administracion\Usuarios.aspx.cs">
-      <DependentUpon>Usuarios.aspx</DependentUpon>
+    <Compile Include="Administracion\AdmonUsuariosMembership.aspx.cs">
+      <DependentUpon>AdmonUsuariosMembership.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Administracion\Usuarios.aspx.designer.cs">
-      <DependentUpon>Usuarios.aspx</DependentUpon>
+    <Compile Include="Administracion\AdmonUsuariosMembership.aspx.designer.cs">
+      <DependentUpon>AdmonUsuariosMembership.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Administracion\usuarios_genexus.aspx.cs">
-      <DependentUpon>usuarios_genexus.aspx</DependentUpon>
+    <Compile Include="Administracion\AdmonUsuariosGenexus.aspx.cs">
+      <DependentUpon>AdmonUsuariosGenexus.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Administracion\usuarios_genexus.aspx.designer.cs">
-      <DependentUpon>usuarios_genexus.aspx</DependentUpon>
+    <Compile Include="Administracion\AdmonUsuariosGenexus.aspx.designer.cs">
+      <DependentUpon>AdmonUsuariosGenexus.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="usuarios_genexus.aspx.cs" Inherits="AdmonUser.Administracion.usuarios_genexus" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AdmonUsuariosGenexus.aspx.cs" Inherits="AdmonUser.Administracion.usuarios_genexus" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
        <iframe id="inlineFrameExample"
     title="Inline Frame Example"
