@@ -36,7 +36,7 @@
                     <div class="p-2 bd-highlight">
                         <asp:UpdatePanel runat="server" ID="btnagregar">
                             <ContentTemplate>
-                                <asp:LinkButton runat="server" ID="btnagregarUser" CssClass="btn btn-marron" OnClick="btnagregarUser_Click">Agregar usuario<i class="fa-solid fa-user-plus"></i></asp:LinkButton>
+                                <asp:LinkButton runat="server" ID="btnagregarUser" CssClass="btn btn-marron" OnClick="BtnagregarUser_Click">Agregar usuario<i class="fa-solid fa-user-plus"></i></asp:LinkButton>
 
                             </ContentTemplate>
                         </asp:UpdatePanel>

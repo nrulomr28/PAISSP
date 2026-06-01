@@ -16,8 +16,7 @@ namespace AdmonUser
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)
-        {
-          
+        {          
             Session.Clear();
             Session.Abandon();
             FormsAuthentication.RedirectToLoginPage();

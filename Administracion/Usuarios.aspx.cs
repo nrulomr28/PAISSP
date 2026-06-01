@@ -108,7 +108,7 @@ namespace AdmonUser.Administracion
 
 
         #region agregar usuario y buscar usuario de siga
-        protected void btnagregarUser_Click(object sender, EventArgs e)
+        protected void BtnagregarUser_Click(object sender, EventArgs e)
         {
             nombre_sistema = Convert.ToString(Session["Nombresistena"]);
             ScriptManager.RegisterStartupScript(this, this.GetType(), "AbrirModalNuevoUser", "AbrirModalNuevoUser();", true);
@@ -121,7 +121,7 @@ namespace AdmonUser.Administracion
             btnGuardarUser.Visible = true;
             btnEditar.Visible = false;
             passwordmodulo.Visible = true;
-            txtpassworrd.Text = Generador_contrasema();
+            txtpassworrd.Text = Generador_contrasenha();
 
         }
         protected void gvuser_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -303,99 +303,145 @@ namespace AdmonUser.Administracion
             // Get all of the roles 
             //string[] roles = System.Web.Security.Roles.GetAllRoles(APLICACION_ID);
             //var userRoleIds = ctx.Roles.Select(r => r.ApplicationId == APLICACION_ID);
-            var roles = ctx.Roles.Where(r => r.ApplicationId == APLICACION_ID).Select(x => x.RoleName).ToArray();
+            //var roles = ctx.Roles.Where(r => r.ApplicationId == APLICACION_ID).Select(x => x.RoleName).ToArray();
+            var roles = ctx.Roles
+                    .Where(r => r.ApplicationId == APLICACION_ID)
+                    .OrderBy(r => r.RoleName)
+                    .Select(r => r.RoleName)
+                    .ToList();
             //string[] roles1 = roles.Select(X => X.RoleName).ToArray();     
             UsersRoleList.DataSource = roles;
             UsersRoleList.DataBind();
         }
         private void CheckRolesForSelectedUser()
         {
-            // Determine what roles the selected user belongs to
-
             string selectedUserName = lbUsuario.Text;
-            var selectedUsersRoles = ctx.vw_MemberShip_datos.Where(a => a.UserName == selectedUserName).ToArray();
-            string[] r = selectedUsersRoles.Select(t => t.RoleName).ToArray();
 
-            // Loop through the Repeater's Items and check or uncheck the checkbox as needed
+            APLICACION_ID = Guid.Parse(Session["GuidSistema"].ToString());
+
+            var rolesUsuario = ctx.vw_MemberShip_datos
+                .Where(a =>
+                    a.UserName == selectedUserName &&
+                    a.ApplicationId == APLICACION_ID)
+                .Select(a => a.RoleName)
+                .ToList();
+
             foreach (RepeaterItem ri in UsersRoleList.Items)
             {
-                // Programmatically reference the CheckBox
-                CheckBox RoleCheckBox = ri.FindControl("RoleCheckBox") as CheckBox;
+                CheckBox chk = ri.FindControl("RoleCheckBox") as CheckBox;
 
-
-                if (r.Contains(RoleCheckBox.Text))
-                    RoleCheckBox.Checked = true;
-                else
-                    RoleCheckBox.Checked = false;
+                if (chk != null)
+                {
+                    chk.Checked = rolesUsuario.Contains(chk.Text);
+                }
             }
         }
         protected void RoleCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             try
             {
-                // Reference the CheckBox that raised this event
-                CheckBox RoleCheckBox = sender as CheckBox;
+                CheckBox roleCheckBox = sender as CheckBox;
 
-                // Get the currently selected user and role
+                if (roleCheckBox == null)
+                    return;
+
                 string selectedUserName = lbUsuario.Text;
-                string roleName = RoleCheckBox.Text;
-                Guid roleGuid;
-                Guid userGuid;
+                string roleName = roleCheckBox.Text;
+
                 APLICACION_ID = Guid.Parse(Session["GuidSistema"].ToString());
-                // Determine if we need to add or remove the user from this role
-                if (RoleCheckBox.Checked)
+
+                // Usuario seleccionado
+                var usuario = ctx.Users
+                    .FirstOrDefault(u => u.UserName == selectedUserName);
+
+                if (usuario == null)
                 {
-                    // Add the user to the role
+                    ScriptManager.RegisterStartupScript(
+                        this,
+                        this.GetType(),
+                        "usuario_no_encontrado",
+                        "alert('Usuario no encontrado');",
+                        true);
 
-                    var Validar_rol_existe = ctx.Roles.Where(x => x.RoleName == roleName && x.ApplicationId == APLICACION_ID).FirstOrDefault();
-                    if (Validar_rol_existe != null)
+                    return;
+                }
+
+                // Rol seleccionado
+                var rol = ctx.Roles
+                    .FirstOrDefault(r =>
+                        r.RoleName == roleName &&
+                        r.ApplicationId == APLICACION_ID);
+
+                if (rol == null)
+                {
+                    ScriptManager.RegisterStartupScript(
+                        this,
+                        this.GetType(),
+                        "rol_no_encontrado",
+                        "alert('Rol no encontrado');",
+                        true);
+
+                    return;
+                }
+
+                // Relación usuario-rol
+                var relacion = ctx.UsersInRoles
+                    .FirstOrDefault(x =>
+                        x.UserId == usuario.UserId &&
+                        x.RoleId == rol.RoleId);
+
+                if (roleCheckBox.Checked)
+                {
+                    // AGREGAR ROL
+                    if (relacion == null)
                     {
-                        roleGuid = Validar_rol_existe.RoleId;
-                        var validar_user = ctx.vw_MemberShip_datos.Where(t => t.UserName == selectedUserName && t.ApplicationId == APLICACION_ID).FirstOrDefault();
-                        if (validar_user != null)
+                        ctx.UsersInRoles.Add(new UsersInRoles
                         {
-                            userGuid = validar_user.UserId;
-                            UsersInRoles agrgaruseryrol = new UsersInRoles();
-                            agrgaruseryrol.RoleId = roleGuid;
-                            agrgaruseryrol.UserId = userGuid;
-                            ctx.UsersInRoles.Add(agrgaruseryrol);
-                            ctx.SaveChanges();
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Seagrego_usuario_al_rol", "Seagrego_usuario_al_rol();", true);
-                            gvuser.DataBind();
-                            llenar_grid_user();
-                        }
-                    }
+                            UserId = usuario.UserId,
+                            RoleId = rol.RoleId
+                        });
 
+                        ctx.SaveChanges();
+
+                        ScriptManager.RegisterStartupScript(
+                            this,
+                            this.GetType(),
+                            "Seagrego_usuario_al_rol",
+                            "Seagrego_usuario_al_rol();",
+                            true);
+                    }
                 }
                 else
                 {
-
-                    // remover el rol de la tabala de usuarios
-                    var checarRol = ctx.vw_MemberShip_datos.Where(a => a.RoleName == roleName).FirstOrDefault();
-                    if (checarRol != null)
+                    // QUITAR ROL
+                    if (relacion != null)
                     {
-                        roleGuid = (Guid)checarRol.RoleId;
-                        userGuid = checarRol.UserId;
+                        ctx.UsersInRoles.Remove(relacion);
 
-                        UsersInRoles customer = ctx.UsersInRoles.Where(t => t.RoleId == roleGuid && t.UserId == userGuid).FirstOrDefault();
-                        if (customer != null)
-                        {
+                        ctx.SaveChanges();
 
-                            ctx.UsersInRoles.Remove(customer);
-                            ctx.SaveChanges();
-                            llenar_grid_user();
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Sequitoel_usuario_del_rol", "Sequitoel_usuario_del_rol();", true);
-
-                        }
+                        ScriptManager.RegisterStartupScript(
+                            this,
+                            this.GetType(),
+                            "Sequitoel_usuario_del_rol",
+                            "Sequitoel_usuario_del_rol();",
+                            true);
                     }
-
-
                 }
 
+                llenar_grid_user();
             }
             catch (Exception ex)
             {
+                ScriptManager.RegisterStartupScript(
+                    this,
+                    this.GetType(),
+                    "error_gral",
+                    "error_gral();",
+                    true);
 
+                // TODO: Bitácora
+                // LogErrores.Registrar(ex, "RoleCheckBox_CheckedChanged");
             }
         }
 
@@ -658,8 +704,6 @@ namespace AdmonUser.Administracion
                         btnEditar.Visible = false;
                     }
 
-
-
                 }
 
 
@@ -727,7 +771,7 @@ namespace AdmonUser.Administracion
 
         }
 
-        public static string Generador_contrasema()
+        public static string Generador_contrasenha()
         {
             Random rdn = new Random();
             string caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890%$#@";
