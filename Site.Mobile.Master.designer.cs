@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AdmonUser {
+namespace PAISSP {
     
     
     public partial class Site_Mobile {

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Administrador de sistemas" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PortalAdministracion.aspx.cs" Inherits="AdmonUser.Administracion.Sistemas" %>
+﻿<%@ Page Title="Administrador de sistemas" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PortalAdministracion.aspx.cs" Inherits="PAISSP.Administracion.Sistemas" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container mt-3">

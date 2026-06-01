@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace AdmonUser
+namespace PAISSP
 {
 
 

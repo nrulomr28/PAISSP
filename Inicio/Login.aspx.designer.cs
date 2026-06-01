@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace AdmonUser.Inicio
+namespace PAISSP.Inicio
 {
 
 

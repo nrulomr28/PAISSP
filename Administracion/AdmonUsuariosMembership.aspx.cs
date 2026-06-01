@@ -1,4 +1,4 @@
-﻿using AdmonUser.Models;
+﻿using PAISSP.Models;
 
 using iTextSharp.text;
 using iTextSharp.text.pdf;
@@ -14,7 +14,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace AdmonUser.Administracion
+namespace PAISSP.Administracion
 {
     public partial class Usuarios : System.Web.UI.Page
     {
@@ -37,7 +37,7 @@ namespace AdmonUser.Administracion
             }
             else
             {
-                Response.Redirect("~/Administracion/Sistemas.aspx");
+                Response.Redirect("~/Administracion/PortalAdministracion.aspx");
             }
             //}
         }

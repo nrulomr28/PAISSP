@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Administrador de cuentas de usuario" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="AdmonUser._Default" %>
+﻿<%@ Page Title="Administrador de cuentas de usuario" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PAISSP._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 

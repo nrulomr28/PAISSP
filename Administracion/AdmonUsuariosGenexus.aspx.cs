@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace AdmonUser.Administracion
+namespace PAISSP.Administracion
 {
     public partial class usuarios_genexus : System.Web.UI.Page
     {

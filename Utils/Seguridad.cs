@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 
-namespace AdmonUser.Utils
+namespace PAISSP.Utils
 {
     public static class Seguridad
     {

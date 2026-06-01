@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="AdmonUser.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="PAISSP.Global" Language="C#" %>

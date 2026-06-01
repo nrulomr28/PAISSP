@@ -6,7 +6,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace AdmonUser.Inicio
+namespace PAISSP.Inicio
 {
     public partial class Login : System.Web.UI.Page
     {

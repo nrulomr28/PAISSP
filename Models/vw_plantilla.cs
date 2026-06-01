@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AdmonUser.Models
+namespace PAISSP.Models
 {
     using System;
     using System.Collections.Generic;
